@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { environment } from '../../environments/environment.development';
-import { CarouselComponent } from './partials/carousel/carousel.component';
-import { CollectionComponent } from '../components/products/collection/collection.component';
-import { FilterProductsComponent } from '../partials/filter-products/filter-products.component';
+import { CarouselHeroComponent } from '../partials/carousel-hero/carousel-hero.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselComponent, FilterProductsComponent],
+  imports: [CarouselHeroComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

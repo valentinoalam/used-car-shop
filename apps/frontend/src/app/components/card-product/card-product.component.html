@@ -1,18 +1,18 @@
-<div class="container relative max-w-sm hover:w-[112%] hover:z-10 hover:-mr-2 hover:-mt-2 hover:-mb-1 hover:-ml-1 space-y-2 mx-auto overflow-hidden transition-all bg-white shadow-sm border dark:bg-gray-900 dark:text-gray-100 rounded-xl hover:shadow-xl">
+<div class="container group relative max-w-sm hover:w-[112%] hover:z-10 hover:-mr-2 hover:-mt-2 hover:-mb-1 hover:-ml-1 space-y-2 mx-auto overflow-hidden transition-all bg-white shadow-sm border dark:bg-gray-900 dark:text-gray-100 rounded-xl hover:shadow-xl">
   <img class="object-cover w-full px-2 pt-2 rounded-2xl" src="https://images.unsplash.com/photo-1547517023-7ca0c162f816" alt="" />
   <div class="absolute hidden px-3 py-1 text-xs font-medium text-gray-800 bg-yellow-200 rounded-full -top-2 -right-0 md:block">
     Certified</div>
-  <div class="absolute flex gap-1 top-3 right-3">
-    <button class="p-2 transition-all duration-300 cursor-pointer rounded-xl hover:rounded-full hover:bg-white/100 bg-white/10 group">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:opacity-50 opacity-70" fill="none" viewBox="0 0 24 24" stroke="black">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    </button>
-    <app-button-like />
-  </div>
 
-  <div class="flex flex-col justify-between px-2 pb-3 mx-2">
 
+  <div class="relative flex flex-col justify-between px-2 pb-3 mx-2">
+    <div class="absolute top-0 right-0 hidden gap-1 group-hover:flex">
+      <button class="p-2 transition-all duration-300 cursor-pointer rounded-xl hover:rounded-full hover:bg-slate-200/100 bg-slate-300/10 group">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:opacity-50 opacity-70" fill="none" viewBox="0 0 24 24" stroke="black">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      </button>
+      <app-button-like />
+    </div>
     <div class="flex flex-wrap justify-between w-full item-center">
       <h1 class="text-2xl font-semibold">Aloe Cactus</h1>
       <div class="flex items-center">
