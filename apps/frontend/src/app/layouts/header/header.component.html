@@ -1,0 +1,83 @@
+<header class="z-50 flex flex-wrap w-full px-6 pt-6 text-sm sm:justify-start sm:flex-nowrap">
+  <div
+    class="relative max-w-[85rem] w-full mx-auto bg-white border-b border-gray-200 py-3 px-4 sm:py-0 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:border-x dark:bg-gray-800 dark:border-gray-700"
+    aria-label="Global">
+    <div class="flex items-center justify-between">
+      <app-icon-logo [title]="title"/>
+
+      <div class="flex gap-4 sm:hidden">
+        <app-select-lang />
+        <button type="button"
+          class="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium text-gray-700 align-middle transition-all bg-white border rounded-lg shadow-sm hs-collapse-toggle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+          data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation"
+          aria-label="Toggle navigation">
+          <svg class="flex-shrink-0 w-4 h-4 hs-collapse-open:hidden" xmlns="http://www.w3.org/2000/svg" width="24"
+            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="3" x2="21" y1="6" y2="6" />
+            <line x1="3" x2="21" y1="12" y2="12" />
+            <line x1="3" x2="21" y1="18" y2="18" />
+          </svg>
+          <svg class="flex-shrink-0 hidden w-4 h-4 hs-collapse-open:block" xmlns="http://www.w3.org/2000/svg" width="24"
+            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <div id="navbar-collapse-with-animation"
+      class="hidden transition-all duration-300 hs-collapse basis-full grow sm:block">
+      <nav
+        class="flex flex-col mt-5 gap-y-4 gap-x-0 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7">
+        <ul
+          class="flex flex-col mx-3 mt-5 lg:mr-5 gap-y-4 gap-x-0 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7 routeNav">
+          <ng-container *ngFor="let nav of routeNav">
+            <li *ngIf="nav.child; else showThis"
+              class="hs-dropdown  py-6 relative z-50 [--strategy:static] sm:[--strategy:absolute] [--adaptive:none] sm:[--trigger:hover]">
+              <button type="button"
+                class="flex items-center w-full font-medium text-gray-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                {{ nav.name }}
+                <svg class="ms-2 w-2.5 h-2.5 text-gray-600" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+              </button>
+
+              <div
+                class="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 sm:w-max hidden z-10 bg-white sm:shadow-md rounded-lg p-2 dark:bg-gray-800 sm:dark:border dark:border-gray-700 dark:divide-gray-700 before:absolute top-full sm:border before:-top-5 before:start-0 before:w-full before:h-5">
+                <ng-container *ngFor="let subnav of nav.child">
+                  <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                    [href]="subnav.to">
+                    {{ subnav.name }}
+                  </a>
+
+                </ng-container>
+              </div>
+            </li>
+
+            <ng-template #showThis>
+              <li class="font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                [ngClass]="isCurrent === nav.to ? 'text-blue-600 sm:py-6 dark:text-blue-500 ' : 'text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500'">
+                <a href="{{ nav?.to }}" aria-current="page">{{ nav.name }}</a>
+              </li>
+            </ng-template>
+          </ng-container>
+        </ul>
+        <div class="hidden gap-1 sm:flex">
+          <app-drawer-cart/>
+          <app-dropdown-notification/>
+        </div>
+
+        <!-- Language Dropdown -->
+        <app-select-lang class="hidden sm:flex"/>
+        <!-- Sign in Modal button -->
+        <app-signin/>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -4,8 +4,9 @@ import { Router, Event, NavigationEnd, RouterOutlet } from '@angular/router';
 import { environment } from '../environments/environment.development';
 import { IStaticMethods } from 'preline/preline';
 import { debounce } from 'perfect-debounce';
-import { HeaderComponent } from "./header/header.component";
-import { FooterComponent } from "./footer/footer.component";
+import { HeaderComponent } from './layouts/header/header.component';
+import { FooterComponent } from './layouts/footer/footer.component';
+
 
 declare global {
   interface HSStaticMethods {

@@ -1,3 +1,3 @@
 export const environment = {
-  title: "Belanja"
+  title: "Carshop"
 };

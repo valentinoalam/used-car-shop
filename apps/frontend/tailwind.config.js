@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        'pink': ['0 5px 8px rgba(244, 114, 182, 0.40)',
+                  '0 2px 3px rgba(244, 114, 182, 0.1)']
+      },
       screens: {
         'mobile': '375px',
         'xs': '600px',
